@@ -1,0 +1,106 @@
+    let counter = 0;
+    let segment = [];
+    // let new Arr = [];
+    const reducer = function(acc, cv){
+        return acc + cv
+    }
+    
+    for(let i = 0; i < s.length; i ++){
+            
+        if(segment.length < m){
+            segment.push(s[i])
+        
+            console.log('before', segment)
+            if(segment.reduce(reducer) === d){
+                console.log('during', segment)
+                counter ++ ;
+                segment.shift();
+                let index = s[i]
+                console.log('try this', index)
+            
+            // let index = segment.shift();
+            //     console.log('index', index)
+            // let newArr = s.splice(index, s.length)
+            // console.log('new arr', newArr);
+            // solve(newArr, d, m)
+            console.log('segment', segment)
+            }
+        }
+    }
+    
+    console.log('counter', counter)
+    return counter;
+
+
+
+function reduce(pieces) {
+  return pieces.reduce((sum, val) => sum += val, 0);
+}
+
+function solve(n, s, d, m) {
+  var count = 0;
+  for (var i = 0; i < n; i++) {
+    if (reduce(s.slice(i, i + m)) === d) count++;
+  }
+
+  return count;
+}
+
+
+
+for (var i = 0; i <= n-m; i++) {
+    if (reduce(s.slice(i, i + m)) === d) count++;
+  }
+
+
+  function getWays(squares, d, m){
+    var ways = 0,
+        i = 0,
+        sum = 0,
+        j = 0,
+        index = 0;
+    if(squares.length === 1 && squares[0] === d){
+      return 1;
+    }
+    for(i = 0; i < squares.length - (m -1); i++){
+      sum = 0;
+      index = i;
+      for(j = 0; j < m; j++){
+        sum += squares[index++]
+      }
+      if(sum === d){
+        ways++;
+      }
+    }
+    return ways;
+}
+
+
+    let container = [];
+    let counter = 0;
+    let newArray = [];
+    
+    function reducer(acc, cv){
+        return acc + cv
+    }
+    
+    function checkArray(array){
+        for(let i = 0; i < array.length; i ++){
+            if(container.length < m){
+                container.push(array[i])
+                if(container.reduce(reducer) === d){
+                    counter ++;
+                    let index = array[i];
+                    newArray = s.slice(index);
+                    console.log('na', newArray)
+                    container.shift();
+                }
+            }
+        }
+    }
+    
+    
+    checkArray(s);
+    
+    console.log(container, 'counter:', counter);
+    return counter;

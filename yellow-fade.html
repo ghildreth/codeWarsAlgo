@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Yellow Fade</title>
+    <style>
+        h1 {
+            background: white;
+        }
+        
+        .saved {
+            background: yellow;
+        }
+        .animating {
+            transition: background-color 2s;            
+        }
+
+    </style>
+</head
+<body>
+    <h1 contenteditable="true">Edit <i lang="fr"> Moi </i>!</h1>
+    <script>
+
+    var h1 = document.querySelector('h1')
+    h1.addEventListener('focusout', function () {
+        // Do some ajax to save the new value
+        // Then yellow fade
+        setTimeout(function () {
+            h1.classList.add('saved');
+            setTimeout(function () {
+                h1.classList.add('animating');
+                h1.classList.remove('saved');
+                setTimeout(function () {
+                    h1.classList.remove('animating');
+                }, 2000)
+            }, 0)
+        }, 500);
+    })
+    </script>
+</body>
+</html>
