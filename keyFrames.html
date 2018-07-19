@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Keyframes</title>
+    <style>
+        h1 {
+            animation: 5s linear 1s infinite lighthouse-boogie;
+            font-family: Helvetica, sans-serif;
+            color: red;
+            background: burlywood;
+            left: 50px;
+            margin: 0;
+            padding: .5em;
+            position: absolute;
+            top: 50px;
+        }
+        @keyframes lighthouse-boogie {
+            0% {
+                left: 50px;
+            }
+            92.5% {
+                left: 55px;
+                color: blue; 
+            }
+            95% {
+                left: 45px;
+            }
+            97.5% {
+                left: 55px;
+            }
+            100% {
+                color: red;
+                left: 50px
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Lighthouse Labs</h1>
+</body>
+</html>
